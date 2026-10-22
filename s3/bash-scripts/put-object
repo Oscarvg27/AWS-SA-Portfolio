@@ -16,6 +16,9 @@ fi
 BUCKET_NAME="$1"
 FILENAME="$2"
 
+OBJECT_KEY=$(basename "FILENAME")
+
 aws s3api put-object \
 --bucket "$BUCKET_NAME" \
---body "$FILENAME"
+--body "$FILENAME" \
+--key "$OBJECT_KEY"
