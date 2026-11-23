@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "== deploy s3 bucket cia CFN"
+
+STACK_NAME="cfn-s3-simple"
+
+aws cloudformation deploy \
+--template-file template.yaml \
+--no-execute-changeset \
+--stack-name "$STACK_NAME"
+# --region us-east-1 
